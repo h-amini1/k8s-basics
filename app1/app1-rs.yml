@@ -15,7 +15,7 @@ spec:                         # ReplicaSet Specs
     metadata:
       labels:
         application: app1     # Pod label
-    spec:                     # Pod Spec
+    spec:                     # Pod Spec  @@@@
       containers:
         - name: nginx
           image: nginx:latest
