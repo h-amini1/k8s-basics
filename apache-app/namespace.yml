@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata: 
-  name: apache-dev
+  name: apache-stg
   labels:
     app: apache
     env: dev
@@ -13,7 +13,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: quota-apache-dev
-  namespace: apache-dev  
+  namespace: apache-stg
 spec:
   hard:
     requests.cpu: "400m"
