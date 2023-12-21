@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: apache-dev
+  labels:
+    app: apache
+    env: dev
+    team: infra
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: quota-apache-dev
+  namespace: apache-dev  
+spec:
+  hard:
+    requests.cpu: "400m"
+    requests.memory: "400Mi"
+    limits.cpu: "400m"
+    limits.memory: "400Mi"
