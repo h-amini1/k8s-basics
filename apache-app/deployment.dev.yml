@@ -1,36 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-dev-deployment
-  namespace: nginx-dev
-  labels: 
-    app: nginx
-    env: env
+  name: apache-dev-deployment
+  namespace: apache-dev
+  labels:
+    app: apache
+    env: dev
     team: infra
 spec:
   replicas: 2
-  selector: 
+  selector:
     matchLabels:
-      app: nginx
+      app: apache
       env: dev
       team: infra
 
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
         env: dev
         team: infra
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.24
-        ports: 
-          - containerPort: 80
-        resources: 
+      - name: apache
+        image: httpd:2.4.54
+        ports:
+        - containerPort: 80
+        resources:
           limits:
             memory: "100Mi"
             cpu: "100m"
-          requests: 
+          requests:
             memory: "100Mi"
             cpu: "100m"
