@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: web
+  labels: 
+    app: nginx
+    env: dev
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+      env: dev
+      containertag: test
+  template:            # Pod definition
+    metadata:
+      labels:
+        app: nginx
+        env: dev
+        containertag: test
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.23
+        ports:
+        - containerPort: 80
+
