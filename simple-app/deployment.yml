@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapp-deployment
+  namespace: simpleapp-ns
+  labels:
+    app: simpleapp
+    env: dev
+    team: infra
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: simpleapp
+      env: dev
+      team: infra
+  template:
+    metadata:
+      labels:
+        app: simpleapp
+        env: dev
+        team: infra
+    spec:
+      containers:
+      - name: simpleapp
+        image: nginx:latest
+        ports:
+        - containerPort: 80

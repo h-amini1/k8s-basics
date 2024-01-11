@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapp-service
+  namespace: simpleapp-ns
+spec:
+  type: LoadBalancer
+  selector:
+    app: simpleapp
+    env: dev
+    team: infra
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80       # port number expoed internally in cluster
+      
+      targetPort: 80       # container port
+      # nodePort: 30007      # host/node -ecternal port number

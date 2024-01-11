@@ -1,0 +1,10 @@
+## Namespace Configuration ##
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: apache-ns
+  labels:
+    app: apache
+    env: dev
+    team: infra

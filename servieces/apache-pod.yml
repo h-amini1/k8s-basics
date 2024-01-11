@@ -1,0 +1,14 @@
+## Pod Configuration ##
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app1
+  namespace: apache-ns
+  labels:
+    environment: dev
+    application: app1
+      
+spec:
+  containers:
+    - name: apache
+      image: httpd:latest

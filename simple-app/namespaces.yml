@@ -1,0 +1,10 @@
+## Namespace Configuration ##
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: simpleapp-ns
+  labels:
+    app: simpleapp
+    env: dev
+    team: infra
